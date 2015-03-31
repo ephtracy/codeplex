@@ -84,10 +84,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mv_file.h" />
-    <ClInclude Include="mv_qb.h" />
-    <ClInclude Include="mv_vox.h" />
     <ClInclude Include="mv_lib.h" />
+    <ClInclude Include="mv_qb.h" />
     <ClInclude Include="mv_slab.h" />
+    <ClInclude Include="mv_vox.h" />
     <ClInclude Include="mv_xraw.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

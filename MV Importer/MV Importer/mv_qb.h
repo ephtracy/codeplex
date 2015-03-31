@@ -1,6 +1,10 @@
+#ifndef __MV_QB__
+#define __MV_QB__
 
 #include "mv_lib.h"
 #include "mv_file.h"
+
+#include <vector>
 
 //================
 // QB
@@ -168,3 +172,5 @@ public :
 		}
 	}
 };
+
+#endif // __MV_QB__

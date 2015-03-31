@@ -39,22 +39,22 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mv_lib.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="mv_file.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mv_vox.h">
+    <ClInclude Include="mv_lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mv_qb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mv_slab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mv_xraw.h">
+    <ClInclude Include="mv_vox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mv_qb.h">
+    <ClInclude Include="mv_xraw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
