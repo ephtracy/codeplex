@@ -15,9 +15,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <vector>
-#include "file.h"
 
-using std::vector;
+#include "mv_lib.h"
+#include "mv_file.h"
 
 // default mac palette table
 const unsigned int mv_default_palette[ 256 ] = {
@@ -39,62 +39,6 @@ const unsigned int mv_default_palette[ 256 ] = {
 	0xff880000, 0xff770000, 0xff550000, 0xff440000, 0xff220000, 0xff110000, 0xffeeeeee, 0xffdddddd, 0xffbbbbbb, 0xffaaaaaa, 0xff888888, 0xff777777, 0xff555555, 0xff444444, 0xff222222, 0xff111111
 };
 
-// magic number
-int MV_ID( int a, int b, int c, int d ) {
-	return ( a ) | ( b << 8 ) | ( c << 16 ) | ( d << 24 );
-}
-
-//================
-// Vec3i
-//================
-class MV_Vec3i {
-public :
-	int x, y, z;
-
-public :
-	MV_Vec3i() {
-		x = y = z = 0;
-	}
-
-	MV_Vec3i &Set( int x, int y, int z ) {
-		this->x = x;
-		this->y = y;
-		this->z = z;
-		return *this;
-	}
-
-	MV_Vec3i &Zero( void ) {
-		x = y = z = 0;
-		return *this;
-	}
-};
-
-//================
-// RGBA
-//================
-class MV_RGBA {
-public :
-	unsigned char r, g, b, a;
-
-public :
-	MV_RGBA() {
-		r = g = b = a = 0;
-	}
-};
-
-//================
-// Voxel
-//================
-class MV_Voxel {
-public :
-	unsigned char x, y, z, colorIndex;
-
-public :
-	MV_Voxel() {
-		x = y = z = colorIndex = 0;
-	}
-};
-
 //================
 // Model
 //================
@@ -107,15 +51,12 @@ public :
 	MV_Vec3i size;
 
 	// voxels
-	vector< MV_Voxel > voxels;
+	std::vector< MV_Voxel > voxels;
 
 	// palette
 	MV_RGBA palette[ 256 ];
 
 public :
-	~MV_Model() {
-	}
-
 	MV_Model() :
 		version( 0 )
 	{
@@ -198,7 +139,7 @@ public :
 			if ( sub.id == ID_SIZE ) {
 				// size
 				file.ReadData( &size, sizeof( MV_Vec3i ), 1 );
-				if ( size.x < 0 || size.y < 0 || size.z < 0 ) {
+				if ( size.x <= 0 || size.y <= 0 || size.z <= 0 ) {
 					printf( "error : invalid size : %d %d %d\n", size.x, size.y, size.z );
 					return false;
 				}

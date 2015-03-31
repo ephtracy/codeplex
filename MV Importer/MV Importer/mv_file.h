@@ -33,7 +33,13 @@ public :
 
 	int ReadInt( void ) {
 		int v = 0;
-		fread( &v, sizeof( int ), 1, fp );
+		fread( &v, sizeof( v ), 1, fp );
+		return v;
+	}
+
+	unsigned char ReadByte( void ) {
+		unsigned char v = 0;
+		fread( &v, sizeof( v ), 1, fp );
 		return v;
 	}
 

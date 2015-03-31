@@ -13,9 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{e0135c04-9944-4ddd-8835-897432ed977b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="Data\colors.vox">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="Data\colors.qb">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="Data\colors.slab.vox">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="Data\colors.xraw">
+      <Filter>Data</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -24,10 +39,22 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mvox.h">
+    <ClInclude Include="mv_lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="file.h">
+    <ClInclude Include="mv_file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mv_vox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mv_slab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mv_xraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mv_qb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
